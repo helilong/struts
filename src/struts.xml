@@ -7,18 +7,18 @@
 	<package name="basicstruts" extends="struts-default">
 
 		<action name="show" class="com.xiaohe.action.HelloAction" method="say">
-			<result>/show.jsp</result>
+			<result name="success">/show.jsp</result>
 		</action>
 		
 		
 			<action name="show2" class="com.xiaohe.action.HelloAction2">
-			<result>/show.jsp</result>
+			<result name="success">/show.jsp</result>
 		</action>
 		
 		
 		
 			<action name="show3" class="com.xiaohe.action.HelloAction3" method="say3">
-			<result>/show.jsp</result>
+			<result name="success">/show.jsp</result>
 		</action>
 	</package>
 
