@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-22222
+	<a href="show">struts2框架测试-.无侵入式</a>
+	
+	<a href="show2">struts2框架测试-半侵入式</a>
+	
+	<a href="show3">struts2框架测试-继承ActionSupport类  </a>
 </body>
 </html>
