@@ -4,22 +4,87 @@
     "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
-	<package name="basicstruts" extends="struts-default">
 
+
+
+
+<!-- 配置常量区 -->
+
+<!-- 该常量代表是否使用 struts2的一个 强大的功能 叫                           动态代理模式-->
+<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+
+<!-- 使用编码格式为   utf-8 -->
+<constant name="struts.i18n.encoding" value="utf-8"></constant>
+
+<!-- 开启开发者模式 -->
+<constant name="struts.devMode" value="utf-8"></constant>
+
+<!-- 代表你实现核心业务  -->
+<constant name="struts.action.extension" value="action,do, ">  </constant>
+
+
+
+
+
+
+
+
+<!--  第一种方法
+<package name="user" extends="struts-default">
+	<action name="addUser" class="com.xiaohe.action.UserAction" method="addUser">
+		<result>/show.jsp</result>
+	</action>
+</package>
+-->
+<!-- 第二种 
+<package name="user" extends="struts-default">
+	<action name="*_*" class="com.xiaohe.action.{2}Action" method="{1}{2}">
+		<result>/show.jsp</result>
+	</action>
+</package>
+-->
+<!-- 第三种(使用动态方法调用) 
+<package name="user" extends="struts-default">
+	<action name="user" class="com.xiaohe.action.UserAction">
+		<result>/show.jsp</result>
+	</action>
+</package>
+-->
+
+
+
+
+<!--  测试Action三种方法
+	<package name="basicstruts" namespace="p1" extends="struts-default">
 		<action name="show" class="com.xiaohe.action.HelloAction" method="say">
-			<result name="success">/show.jsp</result>
+			<result>/show.jsp</result>
 		</action>
-		
-		
 			<action name="show2" class="com.xiaohe.action.HelloAction2">
-			<result name="success">/show.jsp</result>
+			<result>/show.jsp</result>
 		</action>
-		
-		
-		
 			<action name="show3" class="com.xiaohe.action.HelloAction3" method="say3">
-			<result name="success">/show.jsp</result>
+			<result>/show.jsp</result>
 		</action>
 	</package>
+-->
+
+
+<!-- 案例    （增删改查）               -->
+
+
+
+
+
+<package name="userinfo" extends="struts-default">
+	<action name="findAllUser" class="com.xiaohe.action.UserinfoAction" method="findAllUser">
+		<result name="findAllUser" type="dispatcher">/adcc_show.jsp</result>
+	</action>
+	
+</package>
+
+
+
+
+
 
 </struts>
